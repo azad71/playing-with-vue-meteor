@@ -35,6 +35,7 @@
 </template>
 
 <script>
+// load components
 import StudentItem from "./StudentItem.vue";
 import AddStudentModal from "./AddStudentModal.vue";
 

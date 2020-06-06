@@ -27,10 +27,15 @@
 </template>
 
 <script>
+// load module
+import { Meteor } from "meteor/meteor";
+
+// load component
 import AddStudentModal from "./AddStudentModal.vue";
+
+// load backend api
 import { Students } from "../api/students.js";
 import { Subjects } from "../api/subjects.js";
-import { Meteor } from "meteor/meteor";
 
 export default {
   props: ["student"],
@@ -59,7 +64,7 @@ export default {
       );
 
       // if prompt get closed without submission, return
-      if (subjectInput === null) {
+      if (subjectInput === null || subjectInput === "null") {
         return;
       }
 
@@ -80,6 +85,8 @@ export default {
 
   computed: {
     getSubjects() {
+      // Meteor.call() returns data in asynchronous way
+      // so this should be inside callback or async/await
       Meteor.call("subjects.find", this.student._id, (err, data) => {
         if (err) {
           console.log(err);

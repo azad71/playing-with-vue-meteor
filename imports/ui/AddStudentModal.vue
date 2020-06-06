@@ -10,6 +10,8 @@
         </button>
         <form class="mt-4" @submit.prevent="handleSubmit">
           <div class="form-group">
+            <!-- Can be refactored into smaller InputField component
+                if this modal used in other components frequently -->
             <input
               type="text"
               class="form-control"
@@ -59,7 +61,10 @@
 </template>
 
 <script>
+// load modules
 import { Meteor } from "meteor/meteor";
+
+// load backend api
 import { Students } from "../api/students.js";
 export default {
   props: {
@@ -95,7 +100,7 @@ export default {
       } else {
         Meteor.call("students.insert", studentData);
       }
-      // this.$emit("close");
+
       this.closeModal();
     },
 
@@ -103,6 +108,7 @@ export default {
       this.$emit("close");
     },
 
+    // populate input field for update
     setFormData() {
       if (this.$props.isUpdate) {
         this.name = this.student.name;
@@ -114,6 +120,7 @@ export default {
   },
 
   mounted: function () {
+    // run when the modal is mounted
     this.setFormData();
   },
 };

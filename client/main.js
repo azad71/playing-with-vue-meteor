@@ -7,7 +7,6 @@ import VModal from "vue-js-modal";
 
 Vue.use(VueMeteorTracker);
 
-// Vue.use(BootstrapVue);
 Vue.use(VModal, {
   dynamic: true,
   injectModalsContainer: true,

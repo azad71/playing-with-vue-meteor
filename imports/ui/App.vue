@@ -6,14 +6,18 @@
 
     <Student v-bind:students="students" />
     <Subject v-bind:subjects="subjects" />
-    {{ print }}
   </div>
 </template>
 
 <script>
+// load modules
+import { Meteor } from "meteor/meteor";
+
+// load components
 import Student from "./Student.vue";
 import Subject from "./Subject.vue";
-import { Meteor } from "meteor/meteor";
+
+// load backend api
 import { Students } from "../api/students.js";
 import { Subjects } from "../api/subjects.js";
 
@@ -39,12 +43,6 @@ export default {
 
     subjects() {
       return Subjects.find({}).fetch();
-    },
-  },
-
-  computed: {
-    print() {
-      // console.log(this);
     },
   },
 };
