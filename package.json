@@ -1,6 +1,10 @@
 {
   "name": "student-portal",
   "private": true,
+  "keywords": [
+    "vuejs",
+    "meteorjs"
+  ],
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
