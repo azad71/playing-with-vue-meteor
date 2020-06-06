@@ -7,7 +7,7 @@ npm install
 ## To run the app
 
 ```javascript
-meteor;
+meteor
 ```
 
 ## Development Tools
