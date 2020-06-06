@@ -1,3 +1,11 @@
+## What's going on?
+A basic CRUD app implemented in meteor.js as fullstack framework with vue.js as frontend framework.
+
+## What's not added
+- Authentication
+- Strict validation
+- Duplication check for some input field
+
 ## To install dependencies
 
 ```javascript
